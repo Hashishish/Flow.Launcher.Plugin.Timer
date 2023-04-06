@@ -1,7 +1,8 @@
-import sys
-import os
 import datetime
+import os
+import sys
 from datetime import datetime, timedelta
+
 from flowlauncher import FlowLauncher
 from win10toast import ToastNotifier
 
@@ -37,13 +38,15 @@ class Timer(FlowLauncher):
         # По истечению времени вызываем метод для показа уведомления
         self.show_toast_notification('Время таймера истекло!')
 
+    # todo: названия для отдельных таймеров, работающих одновременно и независимо друг от друга
+
     def show_toast_notification(self, message: str):
-        # Создаем экземпляр класса ToastNotifier
+        # Создаём экземпляр класса ToastNotifier
         toaster = ToastNotifier()
         # Вызываем метод show_toast для создания уведомления
         toaster.show_toast('Таймер', message, duration=10)
 
 
 if __name__ == '__main__':
-    # Создаем экземпляр класса Timer и запускаем его
+    # Создаём экземпляр класса Timer и запускаем его
     Timer()
